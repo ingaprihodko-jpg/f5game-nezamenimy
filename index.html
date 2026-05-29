@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>НЕЗАМЕНИМЫЕ — F5GAME.RU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --pink: #ED1E79;
+    --purple: #732BC1;
+    --cyan: #20BAEF;
+    --red: #D32F2F;
+    --green: #2AA817;
+    --yellow: #F7E432;
+    --black: #111111;
+    --gray: #555555;
+    --light-gray: #f5f5f7;
+    --border: #e8e8e8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: #ffffff;
+    color: var(--black);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ====== NAV ====== */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  .nav-logo span { color: var(--pink); }
+  .nav-cta {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 28px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  /* ====== HERO ====== */
+  .hero {
+    padding: 80px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+  }
+
+  .hero-top-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--light-gray);
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+  }
+  .hero-top-badge .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+
+  .hero-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 1.0;
+    color: var(--black);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+  }
+  .hero-title .accent-line {
+    display: block;
+    background: linear-gradient(90deg, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .hero-format {
+    font-size: 15px;
+    color: var(--gray);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .hero-format span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-format .tag {
+    background: rgba(115,43,193,0.08);
+    color: var(--purple);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .btn-cta {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    padding: 20px 48px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(211,47,47,0.3);
+  }
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(211,47,47,0.4);
+  }
+
+  .hero-author-tag {
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--gray);
+  }
+  .hero-author-tag strong { color: var(--black); }
+
+  /* Hero right — illustration / photo block */
+  .hero-visual {
+    position: relative;
+  }
+  .hero-photo-wrap {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(237,30,121,0.08), rgba(115,43,193,0.12));
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border: 1.5px solid var(--border);
+  }
+  .hero-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 24px;
+  }
+  .hero-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--gray);
+    font-size: 14px;
+  }
+  .hero-photo-placeholder .ph-icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+  }
+  .hero-badge-float {
+    position: absolute;
+    bottom: 20px;
+    left: -20px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .hero-badge-float .badge-icon { font-size: 22px; }
+
+  /* ====== SECTION COMMON ====== */
+  section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--pink);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1.1;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+  .section-desc {
+    font-size: 18px;
+    color: var(--gray);
+    line-height: 1.65;
+    max-width: 700px;
+    margin-bottom: 48px;
+  }
+
+  /* ====== DIVIDER ====== */
+  .divider {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .divider hr {
+    border: none;
+    border-top: 1.5px solid var(--border);
+  }
+
+  /* ====== PROBLEM / VISIBILITY ====== */
+  .visibility-intro {
+    background: var(--light-gray);
+    border-radius: 24px;
+    padding: 48px;
+    margin-bottom: 48px;
+  }
+  .visibility-intro p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+  .vis-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .vis-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .vis-point .check {
+    width: 22px; height: 22px; min-width: 22px;
+    border-radius: 50%;
+    background: var(--green);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+
+  /* ====== PROBLEM BLOCKS ====== */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .problem-card {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+  .problem-card.bad::before { background: linear-gradient(90deg, var(--red), #ff6b6b); }
+  .problem-card.good::before { background: linear-gradient(90deg, var(--green), #7ED321); }
+
+  .problem-card .card-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  .problem-card h3 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--black);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+  .problem-card p {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ====== QUESTIONS BLOCK ====== */
+  .questions-block {
+    background: var(--black);
+    border-radius: 24px;
+    padding: 56px 48px;
+    color: #fff;
+    margin: 0 40px;
+    max-width: calc(1200px - 80px);
+  }
+  .questions-block .section-label { color: var(--cyan); }
+  .questions-block .section-title { color: #fff; }
+  .questions-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .q-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 20px 24px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.9);
+  }
+  .q-item .q-dash { color: var(--pink); font-size: 20px; font-weight: 700; margin-top: 1px; }
+
+  /* ====== NOT NEEDED ====== */
+  .not-needed-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .not-needed-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--gray);
+    text-decoration: line-through;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 2px;
+  }
+  .not-needed-item .x { color: var(--red); font-size: 18px; font-weight: 700; text-decoration: none; }
+
+  /* ====== RESULTS TABS ====== */
+  .results-section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+  .results-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    background: var(--light-gray);
+    padding: 6px;
+    border-radius: 16px;
+    width: fit-content;
+  }
+  .results-tab {
+    padding: 10px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--gray);
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Manrope', sans-serif;
+  }
+  .results-tab.active {
+    background: #fff;
+    color: var(--black);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  .results-content { display: none; }
+  .results-content.active { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .result-card {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+  }
+  .result-card .num {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--purple);
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+  .result-card p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--black);
+  }
+
+  /* ====== PROGRAM ====== */
+  .program-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .program-card {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .program-card:hover {
+    box-shadow: 0 8px 32px rgba(115,43,193,0.1);
+    border-color: rgba(115,43,193,0.3);
+  }
+  .program-card .prog-num {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(115,43,193,0.12);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .program-card h3 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: -0.3px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .program-card p {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ====== GIFT ====== */
+  .gift-block {
+    background: linear-gradient(135deg, rgba(237,30,121,0.06), rgba(115,43,193,0.06));
+    border: 1.5px solid rgba(115,43,193,0.2);
+    border-radius: 24px;
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 48px;
+    margin: 0 40px;
+    max-width: calc(1200px - 80px);
+  }
+  .gift-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(237,30,121,0.1);
+    color: var(--pink);
+    border-radius: 40px;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .gift-title {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .gift-desc {
+    font-size: 17px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+  .gift-visual {
+    width: 140px; height: 140px;
+    background: linear-gradient(135deg, var(--pink), var(--purple));
+    border-radius: 28px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 64px;
+    flex-shrink: 0;
+    box-shadow: 0 16px 48px rgba(115,43,193,0.25);
+  }
+
+  /* ====== PRICING ====== */
+  .pricing-block {
+    background: var(--black);
+    border-radius: 24px;
+    padding: 56px;
+    text-align: center;
+    margin: 0 40px;
+    max-width: calc(1200px - 80px);
+  }
+  .pricing-block .section-label { color: var(--cyan); }
+  .pricing-block .section-title { color: #fff; max-width: 600px; margin: 0 auto 32px; }
+  .pricing-format {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+  }
+  .pricing-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .price-old {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.3);
+    text-decoration: line-through;
+  }
+  .price-new {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+  }
+  .price-new span { font-size: 28px; }
+  .price-badge {
+    background: var(--red);
+    color: #fff;
+    border-radius: 40px;
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* ====== AUTHOR ====== */
+  .author-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .author-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .author-photo-wrap {
+    position: relative;
+  }
+  .author-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+    background: var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .author-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .author-photo-ph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+    font-size: 14px;
+  }
+  .author-photo-ph .ph-circle {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px;
+  }
+  .author-name {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  .author-title {
+    font-size: 17px;
+    color: var(--purple);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .author-bio {
+    font-size: 17px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .achievement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+  }
+  .ach-star {
+    font-size: 20px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .achievement-item p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--black);
+    font-weight: 500;
+  }
+
+  /* ====== FOOTER ====== */
+  footer {
+    background: var(--light-gray);
+    border-top: 1.5px solid var(--border);
+    padding: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--gray);
+    margin-top: 80px;
+  }
+  footer .footer-logo {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--black);
+    margin-bottom: 8px;
+  }
+  footer .footer-logo span { color: var(--pink); }
+
+  /* ====== CENTER HELPERS ====== */
+  .text-center { text-align: center; }
+  .mt-40 { margin-top: 40px; }
+  .mb-40 { margin-bottom: 40px; }
+  .full-width-section {
+    max-width: 100%;
+    padding-left: 0; padding-right: 0;
+    margin: 0;
+    margin-bottom: 80px;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; padding: 40px 24px; min-height: auto; }
+    .hero-title { font-size: 40px; }
+    .hero-visual { order: -1; }
+    .hero-photo-wrap { aspect-ratio: 1/1; max-width: 320px; margin: 0 auto; }
+    .vis-points { grid-template-columns: 1fr; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .questions-block { margin: 0 24px; padding: 36px 24px; }
+    .questions-list { grid-template-columns: 1fr; }
+    .not-needed-grid { grid-template-columns: 1fr 1fr; }
+    .results-content.active { grid-template-columns: 1fr; }
+    .program-grid { grid-template-columns: 1fr; }
+    .gift-block { grid-template-columns: 1fr; margin: 0 24px; gap: 24px; text-align: center; }
+    .gift-visual { margin: 0 auto; }
+    .pricing-block { margin: 0 24px; padding: 36px 24px; }
+    .price-new { font-size: 40px; }
+    .author-grid { grid-template-columns: 1fr; }
+    .author-photo { max-width: 280px; margin: 0 auto; }
+    .author-name { font-size: 28px; }
+    .achievements-grid { grid-template-columns: 1fr; }
+    section { padding: 56px 24px; }
+    .section-title { font-size: 28px; }
+    .results-tabs { flex-wrap: wrap; }
+    nav { padding: 12px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">F5<span>GAME</span>.RU</a>
+  <a href="#buy" class="nav-cta">Купить</a>
+</nav>
+
+<!-- HERO -->
+<section style="padding-top:60px; padding-bottom:60px; max-width:1200px; margin:0 auto; padding-left:40px; padding-right:40px;">
+  <div class="hero" style="padding:0; min-height:auto; grid-template-columns:1fr 380px;">
+    <div class="hero-content">
+      <div class="hero-top-badge">
+        <span class="dot"></span>
+        Доступ сразу после оплаты
+      </div>
+      <div class="hero-label">Видео-практикум · Ольга Грищенко</div>
+      <h1 class="hero-title">
+        НЕЗАМЕ-<br>НИМЫЕ
+        <span class="accent-line" style="font-size:32px; letter-spacing:0px; font-weight:700; margin-top:8px; display:block; text-transform:none;">как стать тем, кого боятся потерять</span>
+      </h1>
+      <p class="hero-subtitle">Клиенты, коллеги и руководство — все три категории за один практикум.</p>
+      <div class="hero-format">
+        <span class="tag">🎬 Видео 1,5 часа</span>
+        <span class="tag">📄 Гайд в подарок</span>
+      </div>
+      <a href="#buy" class="btn-cta">СТАТЬ НЕЗАМЕНИМЫМ</a>
+      <p class="hero-author-tag" style="margin-top:20px;">Автор: <strong>Ольга Грищенко</strong> — профессиональный переговорщик, 20 лет опыта</p>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo-wrap">
+        <!-- ФОТО ОЛЬГИ: замените src на реальное изображение -->
+        <div class="hero-photo-placeholder">
+          <div class="ph-icon">👩</div>
+          <span>Фото Ольги Грищенко</span>
+          <span style="font-size:12px; color:#aaa;">Добавьте img с фото</span>
+        </div>
+      </div>
+      <div class="hero-badge-float">
+        <span class="badge-icon">🏆</span>
+        <span>2× Чемпион России<br>по управленческой борьбе</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ВИДИМОСТЬ = УВЕРЕННОСТЬ -->
+<section>
+  <div class="section-label">Почему это важно</div>
+  <h2 class="section-title">Видимость = Уверенность</h2>
+  <div class="visibility-intro">
+    <p>Коммуникация — важнейшая часть работы как в команде, так и соло-эксперту с клиентами. От неё зависит если не всё, то очень и очень многое.</p>
+    <p style="margin-bottom:0;">Большинство понимает, что эффективная деловая коммуникация важна и нужно уметь показывать свою значимость. Но <strong>как именно это делать?</strong></p>
+    <div class="vis-points">
+      <div class="vis-point"><span class="check">✓</span><span>Успешно пройти собеседование и испытательный срок</span></div>
+      <div class="vis-point"><span class="check">✓</span><span>Быть рекомендованным на повышение</span></div>
+      <div class="vis-point"><span class="check">✓</span><span>Получить интересный проект</span></div>
+      <div class="vis-point"><span class="check">✓</span><span>Иметь авторитет, который защитит в кризис</span></div>
+    </div>
+  </div>
+
+  <div class="problem-grid">
+    <div class="problem-card bad">
+      <div class="card-icon">📢</div>
+      <h3>Слишком заметный</h3>
+      <p>Отчитывается о каждом шаге, забирает всё эфирное время на планёрках, совершает много бессмысленных действий «для вида». Вместо авторитета — хаос и раздражение руководителя.</p>
+    </div>
+    <div class="problem-card bad">
+      <div class="card-icon">👻</div>
+      <h3>Невидимка</h3>
+      <p>Молчит о результатах, избегает руководителя, общается из позиции снизу, сдерживает творческий поток. В кризис компания в первую очередь избавляется именно от таких людей.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTIONS DARK BLOCK -->
+<div class="full-width-section">
+  <div class="questions-block" style="margin:0 auto; display:block;">
+    <div class="section-label">Узнаёте себя?</div>
+    <h2 class="section-title" style="color:#fff; margin-bottom:32px;">Вы когда-нибудь чувствовали, что…</h2>
+    <div class="questions-list">
+      <div class="q-item"><span class="q-dash">—</span><span>Вашу работу не замечают, пока вы не ошиблись?</span></div>
+      <div class="q-item"><span class="q-dash">—</span><span>Клиенты легко уходят к конкурентам, а начальник не видит разницы между вами и новичком?</span></div>
+      <div class="q-item"><span class="q-dash">—</span><span>Коллеги получают плюшки за те же результаты, а вы остаётесь «удобным»?</span></div>
+      <div class="q-item"><span class="q-dash">—</span><span>Вы боитесь попросить повышение, потому что вас могут заменить?</span></div>
+    </div>
+    <p style="font-size:19px; color:rgba(255,255,255,0.75); margin-bottom:32px; line-height:1.6;">Если хотя бы раз ответили «да» — этот видео-практикум для вас.</p>
+    <a href="#buy" class="btn-cta">СТАТЬ НЕЗАМЕНИМЫМ</a>
+  </div>
+</div>
+
+<!-- НЕ НУЖНО -->
+<section>
+  <div class="section-label">Без жертв</div>
+  <h2 class="section-title">Чтобы стать незаменимым,<br>вам не нужно:</h2>
+  <div class="not-needed-grid">
+    <div class="not-needed-item"><span class="x">✕</span> Притворяться</div>
+    <div class="not-needed-item"><span class="x">✕</span> Ломать себя</div>
+    <div class="not-needed-item"><span class="x">✕</span> Брать больше задач</div>
+    <div class="not-needed-item"><span class="x">✕</span> Перерабатывать</div>
+    <div class="not-needed-item"><span class="x">✕</span> Вовлекаться в конфликты</div>
+    <div class="not-needed-item"><span class="x">✕</span> Подсиживать коллег</div>
+  </div>
+  <p style="font-size:19px; line-height:1.7; max-width:720px; color:var(--gray);">
+    Вместо этого — изучите <strong style="color:var(--black);">эффективные и достаточно простые техники</strong> и стратегии общения, которые позволят правильно демонстрировать вашу ценность.
+  </p>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- RESULTS -->
+<section class="results-section">
+  <div class="section-label">Что вы получите</div>
+  <h2 class="section-title" style="margin-bottom:32px;">Результаты по трём направлениям</h2>
+  <div class="results-tabs">
+    <button class="results-tab active" onclick="switchTab('boss')">Руководство</button>
+    <button class="results-tab" onclick="switchTab('colleagues')">Коллеги</button>
+    <button class="results-tab" onclick="switchTab('clients')">Клиенты</button>
+  </div>
+  <div id="tab-boss" class="results-content active">
+    <div class="result-card">
+      <div class="num">01</div>
+      <p>Вас начнут воспринимать как <strong>опору</strong>, а не как исполнителя</p>
+    </div>
+    <div class="result-card">
+      <div class="num">02</div>
+      <p>Научитесь говорить о проблемах так, чтобы вас <strong>благодарили</strong>, а не ругали</p>
+    </div>
+    <div class="result-card">
+      <div class="num">03</div>
+      <p>Вас будут <strong>бояться потерять</strong>, даже если вы не «звезда»</p>
+    </div>
+  </div>
+  <div id="tab-colleagues" class="results-content">
+    <div class="result-card">
+      <div class="num">01</div>
+      <p>Ваш <strong>авторитет возрастёт</strong>, роль в коллективе укрепится</p>
+    </div>
+    <div class="result-card">
+      <div class="num">02</div>
+      <p>Научитесь формировать <strong>границы без агрессии</strong></p>
+    </div>
+    <div class="result-card">
+      <div class="num">03</div>
+      <p>Научитесь реагировать на <strong>манипуляции</strong> — когда крадут идею или перекладывают работу</p>
+    </div>
+  </div>
+  <div id="tab-clients" class="results-content">
+    <div class="result-card">
+      <div class="num">01</div>
+      <p>Клиент будет <strong>возвращаться именно к вам</strong>, а не в компанию</p>
+    </div>
+    <div class="result-card">
+      <div class="num">02</div>
+      <p>С <strong>первой встречи</strong> найдёте контакт с клиентом</p>
+    </div>
+    <div class="result-card">
+      <div class="num">03</div>
+      <p>Узнаете, почему <strong>сверхсервис убивает</strong> вашу ценность и что делать вместо этого</p>
+    </div>
+  </div>
+  <div style="margin-top:40px; text-align:center;">
+    <a href="#buy" class="btn-cta">СТАТЬ НЕЗАМЕНИМЫМ</a>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ПРОГРАММА -->
+<section>
+  <div class="section-label">Содержание</div>
+  <h2 class="section-title">Программа практикума</h2>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="prog-num">01</div>
+      <h3>3 типа сотрудников в глазах руководства</h3>
+      <p>Акционеры капитала, антихрупкие и невидимки — в какой категории сейчас вы и как изменить положение с минимальными усилиями.</p>
+    </div>
+    <div class="program-card">
+      <div class="prog-num">02</div>
+      <h3>Самоподача</h3>
+      <p>Как сделать своё присутствие ценным, даже если вы новичок или не приносите количественных результатов. 3 стратегии, которые делают вас видимым.</p>
+    </div>
+    <div class="program-card">
+      <div class="prog-num">03</div>
+      <h3>Зоны контроля</h3>
+      <p>Как определить, на что влиять для достижения цели. 5 формул диалога о зоне контроля — идти своей траекторией, оставаясь в контакте с командой.</p>
+    </div>
+    <div class="program-card">
+      <div class="prog-num">04</div>
+      <h3>Змеи в костюмах</h3>
+      <p>Как реагировать, если вас затягивают в конфликт. 5 лучших техник реагирования на претензии, манипуляции и конфликтные ситуации.</p>
+    </div>
+    <div class="program-card" style="grid-column: 1 / -1;">
+      <div class="prog-num">05</div>
+      <h3>Разговор о деньгах в кризис</h3>
+      <p>5 эффективных сценариев диалога, в котором вы сохраните доход, получите повышение или будете приняты в компанию на самых выгодных условиях.</p>
+    </div>
+  </div>
+  <div style="margin-top:40px; text-align:center;">
+    <a href="#buy" class="btn-cta">СТАТЬ НЕЗАМЕНИМЫМ</a>
+  </div>
+</section>
+
+<!-- ПОДАРОК -->
+<div class="full-width-section" style="padding: 0 40px;">
+  <div class="gift-block" style="margin:0 auto; max-width:1200px;">
+    <div>
+      <div class="gift-tag">🎁 Подарок при покупке</div>
+      <h3 class="gift-title">Из невидимки<br>в незаменимого</h3>
+      <p class="gift-desc">Гайд-стратегия: 3 шага, которые меняют вашу ценность на рынке труда. Получаете сразу вместе с доступом к практикуму.</p>
+    </div>
+    <div class="gift-visual">🎁</div>
+  </div>
+</div>
+
+<!-- ЦЕНА -->
+<div class="full-width-section" style="padding: 0 40px; margin-top:80px;">
+  <div class="pricing-block" id="buy" style="margin:0 auto; max-width:1200px;">
+    <div class="section-label text-center">Участие</div>
+    <h2 class="section-title text-center">Видео-практикум<br>«Незаменимые»</h2>
+    <p class="pricing-format">Продолжительность: 1,5 часа · Доступ сразу после оплаты · Гайд в подарок</p>
+    <div class="pricing-price-row">
+      <span class="price-old">12 000 ₽</span>
+      <span class="price-new">4 950 <span>₽</span></span>
+      <span class="price-badge">−59%</span>
+    </div>
+    <a href="#" class="btn-cta" style="font-size:19px; padding:22px 60px;">КУПИТЬ СЕЙЧАС</a>
+    <p style="color:rgba(255,255,255,0.4); font-size:14px; margin-top:20px;">Образовательная лицензия · Безопасная оплата</p>
+  </div>
+</div>
+
+<!-- АВТОР -->
+<section class="author-section">
+  <div class="section-label">Об авторе</div>
+  <div class="author-grid">
+    <div class="author-photo-wrap">
+      <div class="author-photo">
+        <!-- ФОТО ОЛЬГИ: замените на <img src="olga.jpg" alt="Ольга Грищенко"> -->
+        <div class="author-photo-ph">
+          <div class="ph-circle">👩</div>
+          <span>Фото Ольги</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 class="author-name">Ольга<br>Грищенко</h2>
+      <p class="author-title">Основатель F5GAME.RU · Эксперт по переговорам</p>
+      <p class="author-bio">Практик с 20-летним опытом управления командами. Профессиональный переговорщик, автор книги «Эффект красной розы. Книга тайн и секретов убеждений».</p>
+      <div class="achievements-grid">
+        <div class="achievement-item">
+          <span class="ach-star">⭐</span>
+          <p>Двукратная чемпионка России по управленческой борьбе</p>
+        </div>
+        <div class="achievement-item">
+          <span class="ach-star">🎮</span>
+          <p>Автор и разработчик 50 бизнес-игр</p>
+        </div>
+        <div class="achievement-item">
+          <span class="ach-star">📚</span>
+          <p>Автор книги об убеждении и переговорах</p>
+        </div>
+        <div class="achievement-item">
+          <span class="ach-star">🏭</span>
+          <p>Основатель фабрики бизнес-игр F5GAME.RU</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">F5<span>GAME</span>.RU</div>
+  <p>© 2025 F5GAME.RU · Фабрика бизнес-игр Ольги Грищенко</p>
+  <p style="margin-top:8px;">Все права защищены · Образовательная лицензия</p>
+</footer>
+
+<script>
+function switchTab(tab) {
+  document.querySelectorAll('.results-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.results-content').forEach(c => c.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+</script>
+</body>
+</html>
