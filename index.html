@@ -439,6 +439,32 @@
     display: block;
   }
 
+  .problem-list {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .problem-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+  .problem-list li::before {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--pink);
+    margin-top: 8px;
+  }
+
   /* ====== RESULTS TABS ====== */
   .results-section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
   .results-grid {
@@ -835,17 +861,30 @@
 
   <div class="problem-grid">
     <div class="problem-card bad" style="padding:0; overflow:hidden;">
-      <img src="https://fs.getcourse.ru/fileservice/file/download/a/132950/sc/77/h/2f6c78e7d6a256438fb316199992f4f1.jpg" alt="Невидимка — директор не знает сотрудника" style="width:100%; display:block; border-radius:19px 19px 0 0; object-fit:cover; max-height:320px;">
+      <img src="https://fs.getcourse.ru/fileservice/file/download/a/132950/sc/101/h/e107440c9f68a9e4fd56d25ed5110634.jpg" alt="Слишком заметный — девушка с рупором" style="width:100%; display:block; border-radius:19px 19px 0 0; object-fit:cover; max-height:300px;">
       <div style="padding:28px 32px 32px;">
-        <h3>Невидимка</h3>
-        <p>Молчит о результатах, избегает руководителя, общается из позиции снизу, сдерживает творческий поток. В кризис компания избавляется именно от таких людей.</p>
+        <h3>Слишком заметный</h3>
+        <p style="margin-bottom:16px;">Многие совершают большую ошибку, слишком буквально понимая необходимость быть на виду, и начинают:</p>
+        <ul class="problem-list">
+          <li>отчитываться о каждом, даже самом маленьком, шаге</li>
+          <li>забирать всё эфирное время на планёрках, не давая другим вставить ни слова</li>
+          <li>для вида совершать много действий, которые на самом деле не несут никакого смысла</li>
+        </ul>
+        <p style="margin-top:16px;">Пытаясь стать сияющей звездой в компании, такой человек словно лупит фонариком по глазам окружающих — это ведёт только к хаосу в задачах и раздражению руководителя</p>
       </div>
     </div>
     <div class="problem-card bad" style="padding:0; overflow:hidden;">
-      <img src="https://fs.getcourse.ru/fileservice/file/download/a/132950/sc/101/h/e107440c9f68a9e4fd56d25ed5110634.jpg" alt="Слишком заметный — девушка с рупором" style="width:100%; display:block; border-radius:19px 19px 0 0; object-fit:cover; max-height:320px;">
+      <img src="https://fs.getcourse.ru/fileservice/file/download/a/132950/sc/77/h/2f6c78e7d6a256438fb316199992f4f1.jpg" alt="Невидимка — директор не знает сотрудника" style="width:100%; display:block; border-radius:19px 19px 0 0; object-fit:cover; max-height:300px;">
       <div style="padding:28px 32px 32px;">
-        <h3>Слишком заметный</h3>
-        <p>Отчитывается о каждом шаге, забирает всё эфирное время на планёрках, совершает много бессмысленных действий «для вида». Вместо авторитета — хаос и раздражение руководителя.</p>
+        <h3>Невидимка</h3>
+        <p style="margin-bottom:16px;">Другой вариант — человек отлично выполняет свою работу, но обитает исключительно в тени:</p>
+        <ul class="problem-list">
+          <li>молчит о своих результатах</li>
+          <li>избегает разговоров с руководителем</li>
+          <li>общается из позиции снизу</li>
+          <li>сдерживает творческий поток, боясь оказаться непонятым</li>
+        </ul>
+        <p style="margin-top:16px;">Такое поведение может поставить под удар даже хорошего сотрудника — в кризис компания в первую очередь избавляется от невидимок. Просто из-за человеческого фактора</p>
       </div>
     </div>
   </div>
