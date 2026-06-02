@@ -370,12 +370,18 @@
 
   /* ====== QUESTIONS BLOCK ====== */
   .questions-block {
-    background: var(--black);
+    background: linear-gradient(135deg, #390084 0%, #5a1fa0 60%, #732BC1 100%);
     border-radius: 24px;
     padding: 56px 48px;
     color: #fff;
     margin: 0 40px;
     max-width: calc(1200px - 80px);
+  }
+  .questions-inner {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 48px;
+    align-items: center;
   }
   .questions-block .section-label { color: var(--cyan); }
   .questions-block .section-title { color: #fff; }
@@ -750,6 +756,8 @@
     .questions-block { margin: 0 24px; padding: 36px 24px; }
     .questions-list { grid-template-columns: 1fr; }
     .not-needed-layout { grid-template-columns: 1fr; }
+    .questions-inner { grid-template-columns: 1fr; }
+    .questions-inner img { display: none; }
     .results-grid { grid-template-columns: 1fr; }
     .program-grid { grid-template-columns: 1fr; }
     .gift-block { grid-template-columns: 1fr; margin: 0 24px; gap: 24px; text-align: center; }
@@ -846,16 +854,21 @@
 <!-- QUESTIONS DARK BLOCK -->
 <div class="full-width-section">
   <div class="questions-block" style="margin:0 auto; display:block;">
-    <div class="section-label">Узнаёте себя?</div>
-    <h2 class="section-title" style="color:#fff; margin-bottom:32px;">Вы когда-нибудь чувствовали, что…</h2>
-    <div class="questions-list">
-      <div class="q-item"><span class="q-dash">—</span><span>Вашу работу не замечают, пока вы не ошиблись?</span></div>
-      <div class="q-item"><span class="q-dash">—</span><span>Клиенты легко уходят к конкурентам, а начальник не видит разницы между вами и новичком?</span></div>
-      <div class="q-item"><span class="q-dash">—</span><span>Коллеги получают плюшки за те же результаты, а вы остаётесь «удобным»?</span></div>
-      <div class="q-item"><span class="q-dash">—</span><span>Вы боитесь попросить повышение, потому что вас могут заменить?</span></div>
+    <div class="questions-inner">
+      <div>
+        <div class="section-label">Узнаёте себя?</div>
+        <h2 class="section-title" style="color:#fff; margin-bottom:32px;">Вы когда-нибудь чувствовали, что…</h2>
+        <div class="questions-list">
+          <div class="q-item"><span class="q-dash">—</span><span>Вашу работу не замечают, пока вы не ошиблись?</span></div>
+          <div class="q-item"><span class="q-dash">—</span><span>Клиенты легко уходят к конкурентам, а начальник не видит разницы между вами и новичком?</span></div>
+          <div class="q-item"><span class="q-dash">—</span><span>Коллеги получают плюшки за те же результаты, а вы остаётесь «удобным»?</span></div>
+          <div class="q-item"><span class="q-dash">—</span><span>Вы боитесь попросить повышение, потому что вас могут заменить?</span></div>
+        </div>
+        <p style="font-size:19px; color:rgba(255,255,255,0.75); margin-bottom:32px; line-height:1.6;">Если хотя бы раз ответили «да» — этот видео-практикум для вас.</p>
+        <a href="#buy" class="btn-cta">СТАТЬ НЕЗАМЕНИМЫМ</a>
+      </div>
+      <img src="https://f5game.site/pl/fileservice/user/file/download/h/2f6c78e7d6a256438fb316199992f4f1.jpg" alt="Директор и сотрудник" style="width:100%; border-radius:16px; display:block;">
     </div>
-    <p style="font-size:19px; color:rgba(255,255,255,0.75); margin-bottom:32px; line-height:1.6;">Если хотя бы раз ответили «да» — этот видео-практикум для вас.</p>
-    <a href="#buy" class="btn-cta">СТАТЬ НЕЗАМЕНИМЫМ</a>
   </div>
 </div>
 
