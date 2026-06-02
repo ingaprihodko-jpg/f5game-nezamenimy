@@ -465,41 +465,59 @@
     margin-top: 8px;
   }
 
-  /* ====== RESULTS TABS ====== */
+  /* ====== RESULTS ====== */
   .results-section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
-  .results-grid {
+  .results-heads {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 24px;
+    gap: 0 12px;
+    margin-bottom: 12px;
   }
-  .results-col {
+  .results-col-head {
+    padding: 16px 20px;
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
   }
-  .results-col-title {
+  .results-col-head svg { flex-shrink: 0; }
+  .results-col-head span {
     font-family: 'Unbounded', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--pink);
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--pink);
-    margin-bottom: 4px;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+  .results-col-head.boss { background: #390084; }
+  .results-col-head.colleagues { background: #ED1E79; }
+  .results-col-head.clients { background: #732BC1; }
+  .results-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px 12px;
+    align-items: stretch;
+  }
+  .result-card {
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
   }
   .result-card .num {
     font-family: 'Unbounded', sans-serif;
-    font-size: 32px;
+    font-size: 11px;
     font-weight: 900;
-    color: var(--purple);
-    margin-bottom: 12px;
-    line-height: 1;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
   }
+  .result-card .num.boss { color: #390084; }
+  .result-card .num.colleagues { color: #ED1E79; }
+  .result-card .num.clients { color: #732BC1; }
   .result-card p {
-    font-size: 16px;
-    line-height: 1.55;
+    font-size: 15px;
+    line-height: 1.6;
     color: var(--black);
+    margin: 0;
   }
 
   /* ====== PROGRAM ====== */
@@ -779,7 +797,8 @@
     .not-needed-layout { grid-template-columns: 1fr; }
     .questions-inner { grid-template-columns: 1fr; }
     .questions-inner img { display: none; }
-    .results-grid { grid-template-columns: 1fr; }
+    .results-heads { grid-template-columns: 1fr; }
+    .results-cards { grid-template-columns: 1fr; }
     .program-grid { grid-template-columns: 1fr; }
     .gift-block { grid-template-columns: 1fr; margin: 0 24px; gap: 24px; text-align: center; }
     .gift-visual { margin: 0 auto; }
@@ -941,52 +960,21 @@
 <section class="results-section">
   <div class="section-label">Что вы получите</div>
   <h2 class="section-title" style="margin-bottom:32px;">Результаты по трём направлениям</h2>
-  <div class="results-grid">
-    <div class="results-col">
-      <div class="results-col-title">Руководство</div>
-      <div class="result-card">
-        <div class="num">01</div>
-        <p>Вас начнут воспринимать как <strong>опору</strong>, а не как исполнителя</p>
-      </div>
-      <div class="result-card">
-        <div class="num">02</div>
-        <p>Научитесь говорить о проблемах так, чтобы вас <strong>благодарили</strong>, а не ругали</p>
-      </div>
-      <div class="result-card">
-        <div class="num">03</div>
-        <p>Вас будут <strong>бояться потерять</strong>, даже если вы не «звезда»</p>
-      </div>
-    </div>
-    <div class="results-col">
-      <div class="results-col-title">Коллеги</div>
-      <div class="result-card">
-        <div class="num">01</div>
-        <p>Ваш <strong>авторитет возрастёт</strong>, роль в коллективе укрепится</p>
-      </div>
-      <div class="result-card">
-        <div class="num">02</div>
-        <p>Научитесь формировать <strong>границы, за которые нельзя заходить</strong> — и делать это без агрессии</p>
-      </div>
-      <div class="result-card">
-        <div class="num">03</div>
-        <p>Научитесь реагировать на <strong>манипуляции</strong> — когда крадут идею или перекладывают работу</p>
-      </div>
-    </div>
-    <div class="results-col">
-      <div class="results-col-title">Клиенты</div>
-      <div class="result-card">
-        <div class="num">01</div>
-        <p>Клиент будет <strong>возвращаться именно к вам</strong>, а не в компанию</p>
-      </div>
-      <div class="result-card">
-        <div class="num">02</div>
-        <p>С <strong>первой встречи</strong> найдёте контакт с клиентом</p>
-      </div>
-      <div class="result-card">
-        <div class="num">03</div>
-        <p>Узнаете, почему <strong>сверхсервис убивает</strong> вашу ценность и что делать вместо этого</p>
-      </div>
-    </div>
+  <div class="results-heads">
+    <div class="results-col-head boss"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg><span>Руководство</span></div>
+    <div class="results-col-head colleagues"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Коллеги</span></div>
+    <div class="results-col-head clients"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span>Клиенты</span></div>
+  </div>
+  <div class="results-cards">
+    <div class="result-card"><div class="num boss">01</div><p>Вас начнут воспринимать как <strong>опору</strong>, а не как исполнителя</p></div>
+    <div class="result-card"><div class="num colleagues">01</div><p>Ваш <strong>авторитет возрастёт</strong>, роль в коллективе укрепится</p></div>
+    <div class="result-card"><div class="num clients">01</div><p>Клиент будет <strong>возвращаться именно к вам</strong>, а не в компанию</p></div>
+    <div class="result-card"><div class="num boss">02</div><p>Научитесь говорить о проблемах так, чтобы вас <strong>благодарили</strong>, а не ругали</p></div>
+    <div class="result-card"><div class="num colleagues">02</div><p>Научитесь формировать <strong>границы, за которые нельзя заходить</strong> — и делать это без агрессии</p></div>
+    <div class="result-card"><div class="num clients">02</div><p>С <strong>первой встречи</strong> найдёте контакт с клиентом</p></div>
+    <div class="result-card"><div class="num boss">03</div><p>Вас будут <strong>бояться потерять</strong>, даже если вы не «звезда»</p></div>
+    <div class="result-card"><div class="num colleagues">03</div><p>Научитесь реагировать на <strong>манипуляции</strong> — когда крадут идею или перекладывают работу</p></div>
+    <div class="result-card"><div class="num clients">03</div><p>Узнаете, почему <strong>сверхсервис убивает</strong> вашу ценность и что делать вместо этого</p></div>
   </div>
   <div style="margin-top:40px; text-align:center;">
     <a href="#buy" class="btn-cta">СТАТЬ НЕЗАМЕНИМЫМ</a>
