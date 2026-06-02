@@ -400,27 +400,38 @@
   .q-item .q-dash { color: var(--pink); font-size: 20px; font-weight: 700; margin-top: 1px; }
 
   /* ====== NOT NEEDED ====== */
-  .not-needed-grid {
+  .not-needed-layout {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .not-needed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     margin-bottom: 40px;
   }
   .not-needed-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 16px 20px;
-    border: 1.5px solid var(--border);
-    border-radius: 14px;
-    font-size: 15px;
+    gap: 14px;
+    font-size: 17px;
     font-weight: 500;
-    color: var(--gray);
-    text-decoration: line-through;
-    text-decoration-color: var(--red);
-    text-decoration-thickness: 2px;
+    color: var(--black);
   }
-  .not-needed-item .x { color: var(--red); font-size: 18px; font-weight: 700; text-decoration: none; }
+  .not-needed-item .stop-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    color: var(--pink);
+  }
+  .not-needed-img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+  }
 
   /* ====== RESULTS TABS ====== */
   .results-section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
@@ -738,7 +749,7 @@
     .problem-grid { grid-template-columns: 1fr; }
     .questions-block { margin: 0 24px; padding: 36px 24px; }
     .questions-list { grid-template-columns: 1fr; }
-    .not-needed-grid { grid-template-columns: 1fr 1fr; }
+    .not-needed-layout { grid-template-columns: 1fr; }
     .results-grid { grid-template-columns: 1fr; }
     .program-grid { grid-template-columns: 1fr; }
     .gift-block { grid-template-columns: 1fr; margin: 0 24px; gap: 24px; text-align: center; }
@@ -852,17 +863,23 @@
 <section>
   <div class="section-label">Без жертв</div>
   <h2 class="section-title">Чтобы стать незаменимым,<br>вам не нужно:</h2>
-  <div class="not-needed-grid">
-    <div class="not-needed-item"><span class="x">✕</span> Притворяться</div>
-    <div class="not-needed-item"><span class="x">✕</span> Ломать себя</div>
-    <div class="not-needed-item"><span class="x">✕</span> Брать больше задач</div>
-    <div class="not-needed-item"><span class="x">✕</span> Перерабатывать</div>
-    <div class="not-needed-item"><span class="x">✕</span> Вовлекаться в конфликты</div>
-    <div class="not-needed-item"><span class="x">✕</span> Подсиживать коллег</div>
+  <div class="not-needed-layout">
+    <div>
+      <div class="not-needed-list">
+        <div class="not-needed-item"><svg class="stop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg> Притворяться</div>
+        <div class="not-needed-item"><svg class="stop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg> Ломать себя</div>
+        <div class="not-needed-item"><svg class="stop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg> Брать больше задач</div>
+        <div class="not-needed-item"><svg class="stop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg> Перерабатывать</div>
+        <div class="not-needed-item"><svg class="stop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg> Вовлекаться в конфликты</div>
+        <div class="not-needed-item"><svg class="stop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg> Подсиживать коллег</div>
+        <div class="not-needed-item"><svg class="stop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg> Или как-то ещё переходить на сторону зла</div>
+      </div>
+      <p style="font-size:18px; line-height:1.7; color:var(--gray); max-width:560px;">
+        Вместо этого — изучите <strong style="color:var(--black);">эффективные и достаточно простые техники</strong> и стратегии общения на видео-практикуме
+      </p>
+    </div>
+    <img class="not-needed-img" src="https://fs.getcourse.ru/fileservice/file/download/a/132950/sc/52/h/538709156324284c2bcba1676975aafc.jpg" alt="Переходи на сторону зла">
   </div>
-  <p style="font-size:19px; line-height:1.7; max-width:720px; color:var(--gray);">
-    Вместо этого — изучите <strong style="color:var(--black);">эффективные и достаточно простые техники</strong> и стратегии общения, которые позволят правильно демонстрировать вашу ценность.
-  </p>
 </section>
 
 <div class="divider"><hr></div>
