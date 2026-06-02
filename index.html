@@ -332,13 +332,19 @@
     grid-template-columns: 1fr 1fr;
     gap: 24px;
     margin-bottom: 48px;
+    align-items: stretch;
   }
   .problem-card {
     border: 1.5px solid var(--border);
     border-radius: 20px;
-    padding: 36px;
+    padding: 0;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .problem-card > div {
+    flex: 1;
   }
   .problem-card::before {
     content: '';
