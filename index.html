@@ -424,36 +424,27 @@
 
   /* ====== RESULTS TABS ====== */
   .results-section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
-  .results-tabs {
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+  .results-col {
     display: flex;
-    gap: 8px;
-    margin-bottom: 32px;
-    background: var(--light-gray);
-    padding: 6px;
-    border-radius: 16px;
-    width: fit-content;
+    flex-direction: column;
+    gap: 16px;
   }
-  .results-tab {
-    padding: 10px 28px;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    color: var(--gray);
-    transition: all 0.2s;
+  .results-col-title {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-family: 'Manrope', sans-serif;
+    letter-spacing: 2px;
+    color: var(--pink);
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--pink);
+    margin-bottom: 4px;
   }
-  .results-tab.active {
-    background: #fff;
-    color: var(--black);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  }
-  .results-content { display: none; }
-  .results-content.active { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
   .result-card {
     border: 1.5px solid var(--border);
     border-radius: 20px;
@@ -748,7 +739,7 @@
     .questions-block { margin: 0 24px; padding: 36px 24px; }
     .questions-list { grid-template-columns: 1fr; }
     .not-needed-grid { grid-template-columns: 1fr 1fr; }
-    .results-content.active { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr; }
     .program-grid { grid-template-columns: 1fr; }
     .gift-block { grid-template-columns: 1fr; margin: 0 24px; gap: 24px; text-align: center; }
     .gift-visual { margin: 0 auto; }
@@ -760,7 +751,7 @@
     .achievements-grid { grid-template-columns: 1fr; }
     section { padding: 56px 24px; }
     .section-title { font-size: 28px; }
-    .results-tabs { flex-wrap: wrap; }
+    
     nav { padding: 12px 24px; }
   }
 </style>
@@ -880,51 +871,51 @@
 <section class="results-section">
   <div class="section-label">Что вы получите</div>
   <h2 class="section-title" style="margin-bottom:32px;">Результаты по трём направлениям</h2>
-  <div class="results-tabs">
-    <button class="results-tab active" onclick="switchTab('boss')">Руководство</button>
-    <button class="results-tab" onclick="switchTab('colleagues')">Коллеги</button>
-    <button class="results-tab" onclick="switchTab('clients')">Клиенты</button>
-  </div>
-  <div id="tab-boss" class="results-content active">
-    <div class="result-card">
-      <div class="num">01</div>
-      <p>Вас начнут воспринимать как <strong>опору</strong>, а не как исполнителя</p>
+  <div class="results-grid">
+    <div class="results-col">
+      <div class="results-col-title">Руководство</div>
+      <div class="result-card">
+        <div class="num">01</div>
+        <p>Вас начнут воспринимать как <strong>опору</strong>, а не как исполнителя</p>
+      </div>
+      <div class="result-card">
+        <div class="num">02</div>
+        <p>Научитесь говорить о проблемах так, чтобы вас <strong>благодарили</strong>, а не ругали</p>
+      </div>
+      <div class="result-card">
+        <div class="num">03</div>
+        <p>Вас будут <strong>бояться потерять</strong>, даже если вы не «звезда»</p>
+      </div>
     </div>
-    <div class="result-card">
-      <div class="num">02</div>
-      <p>Научитесь говорить о проблемах так, чтобы вас <strong>благодарили</strong>, а не ругали</p>
+    <div class="results-col">
+      <div class="results-col-title">Коллеги</div>
+      <div class="result-card">
+        <div class="num">01</div>
+        <p>Ваш <strong>авторитет возрастёт</strong>, роль в коллективе укрепится</p>
+      </div>
+      <div class="result-card">
+        <div class="num">02</div>
+        <p>Научитесь формировать <strong>границы без агрессии</strong></p>
+      </div>
+      <div class="result-card">
+        <div class="num">03</div>
+        <p>Научитесь реагировать на <strong>манипуляции</strong> — когда крадут идею или перекладывают работу</p>
+      </div>
     </div>
-    <div class="result-card">
-      <div class="num">03</div>
-      <p>Вас будут <strong>бояться потерять</strong>, даже если вы не «звезда»</p>
-    </div>
-  </div>
-  <div id="tab-colleagues" class="results-content">
-    <div class="result-card">
-      <div class="num">01</div>
-      <p>Ваш <strong>авторитет возрастёт</strong>, роль в коллективе укрепится</p>
-    </div>
-    <div class="result-card">
-      <div class="num">02</div>
-      <p>Научитесь формировать <strong>границы без агрессии</strong></p>
-    </div>
-    <div class="result-card">
-      <div class="num">03</div>
-      <p>Научитесь реагировать на <strong>манипуляции</strong> — когда крадут идею или перекладывают работу</p>
-    </div>
-  </div>
-  <div id="tab-clients" class="results-content">
-    <div class="result-card">
-      <div class="num">01</div>
-      <p>Клиент будет <strong>возвращаться именно к вам</strong>, а не в компанию</p>
-    </div>
-    <div class="result-card">
-      <div class="num">02</div>
-      <p>С <strong>первой встречи</strong> найдёте контакт с клиентом</p>
-    </div>
-    <div class="result-card">
-      <div class="num">03</div>
-      <p>Узнаете, почему <strong>сверхсервис убивает</strong> вашу ценность и что делать вместо этого</p>
+    <div class="results-col">
+      <div class="results-col-title">Клиенты</div>
+      <div class="result-card">
+        <div class="num">01</div>
+        <p>Клиент будет <strong>возвращаться именно к вам</strong>, а не в компанию</p>
+      </div>
+      <div class="result-card">
+        <div class="num">02</div>
+        <p>С <strong>первой встречи</strong> найдёте контакт с клиентом</p>
+      </div>
+      <div class="result-card">
+        <div class="num">03</div>
+        <p>Узнаете, почему <strong>сверхсервис убивает</strong> вашу ценность и что делать вместо этого</p>
+      </div>
     </div>
   </div>
   <div style="margin-top:40px; text-align:center;">
