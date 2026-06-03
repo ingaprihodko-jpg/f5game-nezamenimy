@@ -438,6 +438,14 @@
     height: 22px;
     color: var(--pink);
   }
+  .not-needed-text {
+    font-size: 16px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .not-needed-text strong { color: var(--black); font-weight: 600; }
+  .not-needed-text:not(:last-child) { margin-bottom: 8px; }
   .not-needed-img {
     width: 100%;
     border-radius: 20px;
@@ -949,14 +957,14 @@
         <div class="not-needed-item"><svg class="stop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg> Подсиживать коллег</div>
         <div class="not-needed-item"><svg class="stop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg> Или как-то ещё переходить на сторону зла</div>
       </div>
-      <p style="font-size:18px; line-height:1.7; color:var(--gray); max-width:560px; margin-bottom:32px;">
-        Вместо этого — изучите <strong style="color:var(--black);">эффективные и достаточно простые техники</strong> и стратегии общения на видео-практикуме
+      <p class="not-needed-text">
+        Вместо этого — изучите <strong>эффективные и достаточно простые техники</strong> и стратегии общения на видео-практикуме
       </p>
-      <div style="border-left:3px solid var(--pink); padding-left:20px; max-width:560px;">
-        <p style="font-family:'Unbounded',sans-serif; font-size:18px; font-weight:900; color:#390084; text-transform:uppercase; line-height:1.2; margin-bottom:10px;">Незаменимые</p>
-        <p style="font-size:16px; color:var(--gray); line-height:1.6; margin-bottom:8px;">Как стать тем, кого боятся потерять — клиенты, коллеги и руководство</p>
-        <p style="font-size:15px; color:var(--gray); line-height:1.6; margin-bottom:8px;">Вы научитесь менять свою роль внутри команды и стать видимым в любой компании</p>
-        <p style="font-size:14px; color:var(--black); font-weight:600;">Автор — Ольга Грищенко, профессиональный переговорщик, практик с 20-летним опытом управления командами</p>
+      <div style="border-left:3px solid var(--pink); padding-left:20px; max-width:560px; margin-top:24px;">
+        <p style="font-family:'Unbounded',sans-serif; font-size:15px; font-weight:900; color:#390084; text-transform:uppercase; line-height:1.2; margin-bottom:12px;">Незаменимые</p>
+        <p class="not-needed-text" style="margin-bottom:8px;">Как стать тем, кого боятся потерять — клиенты, коллеги и руководство</p>
+        <p class="not-needed-text" style="margin-bottom:8px;">Вы научитесь менять свою роль внутри команды и стать видимым в любой компании</p>
+        <p class="not-needed-text"><strong>Автор — Ольга Грищенко, профессиональный переговорщик, практик с 20-летним опытом управления командами</strong></p>
       </div>
     </div>
     <img class="not-needed-img" src="https://fs.getcourse.ru/fileservice/file/download/a/132950/sc/52/h/538709156324284c2bcba1676975aafc.jpg" alt="Переходи на сторону зла">
