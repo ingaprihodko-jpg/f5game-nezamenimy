@@ -871,36 +871,63 @@
 
   /* ====== RESPONSIVE ====== */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; gap: 40px; padding: 40px 24px; min-height: auto; }
-    .hero-title { font-size: 40px; }
+    /* HERO */
+    .hero { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; min-height: auto; }
+    .hero-title { font-size: 36px; }
     .hero-visual { order: -1; }
-    .hero-photo-wrap { aspect-ratio: 1/1; max-width: 320px; margin: 0 auto; }
+    .hero-photo-wrap { max-width: 100%; margin: 0 auto; }
+    .hero-photo-wrap video { border-radius: 12px; }
+
+    /* VISIBILITY */
     .vis-points { grid-template-columns: 1fr; }
+
+    /* PROBLEM CARDS */
     .problem-grid { grid-template-columns: 1fr; }
-    .questions-block { margin: 0 24px; padding: 36px 24px; }
+
+    /* QUESTIONS */
+    .questions-block { margin: 0 16px; padding: 32px 20px; }
     .questions-list { grid-template-columns: 1fr; }
-    .not-needed-layout { grid-template-columns: 1fr; }
     .questions-inner { grid-template-columns: 1fr; }
     .questions-inner img { display: none; }
+
+    /* NOT NEEDED */
+    .not-needed-layout { grid-template-columns: 1fr; }
+    .not-needed-img { display: none; }
+
+    /* RESULTS */
     .results-heads { display: none; }
     .results-cards { display: none; }
     .results-mobile { display: flex; flex-direction: column; gap: 24px; }
     .results-mobile-col { display: flex; flex-direction: column; gap: 12px; }
+
+    /* PROGRAM */
     .program-grid { grid-template-columns: 1fr; }
-    .gift-block { grid-template-columns: 1fr; margin: 0 24px; gap: 24px; text-align: center; }
+    .program-card[style*="grid-column"] { grid-column: 1 !important; }
+
+    /* GIFT */
+    .gift-block { grid-template-columns: 1fr; margin: 0 16px; gap: 24px; text-align: center; padding: 32px 24px; }
     .gift-items { grid-template-columns: 1fr; }
-    .gift-boxes { margin: 0 auto; }
-    .gift-visual { margin: 0 auto; }
-    .pricing-block { margin: 0 24px; padding: 36px 24px; }
+    .gift-boxes { margin: 0 auto; width: 160px; height: 160px; }
+
+    /* TIMER */
+    #timer-block { flex-direction: column; align-items: flex-start; padding: 24px 20px; margin: 0 16px; }
+
+    /* PRICING */
+    .pricing-block { margin: 0 16px; padding: 36px 24px; }
     .price-new { font-size: 40px; }
+    .pricing-price-row { flex-wrap: wrap; justify-content: center; }
+
+    /* AUTHOR */
     .author-grid { grid-template-columns: 1fr; }
-    .author-photo { max-width: 280px; margin: 0 auto; }
+    .author-photo { max-width: 260px; margin: 0 auto; }
     .author-name { font-size: 28px; }
     .achievements-grid { grid-template-columns: 1fr; }
-    section { padding: 56px 24px; }
-    .section-title { font-size: 28px; }
-    
-    nav { padding: 12px 24px; }
+
+    /* GENERAL */
+    section { padding: 48px 20px; }
+    .section-title { font-size: 26px; }
+    .full-width-section { padding: 0 !important; }
+    nav { padding: 12px 20px; }
   }
 </style>
 </head>
