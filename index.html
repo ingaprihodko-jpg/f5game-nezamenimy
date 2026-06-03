@@ -473,6 +473,7 @@
     margin-top: 8px;
   }
 
+  .results-mobile { display: none; }
   /* ====== RESULTS ====== */
   .results-section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
   .results-heads {
@@ -826,8 +827,10 @@
     .not-needed-layout { grid-template-columns: 1fr; }
     .questions-inner { grid-template-columns: 1fr; }
     .questions-inner img { display: none; }
-    .results-heads { grid-template-columns: 1fr; }
-    .results-cards { grid-template-columns: 1fr; }
+    .results-heads { display: none; }
+    .results-cards { display: none; }
+    .results-mobile { display: flex; flex-direction: column; gap: 24px; }
+    .results-mobile-col { display: flex; flex-direction: column; gap: 12px; }
     .program-grid { grid-template-columns: 1fr; }
     .gift-block { grid-template-columns: 1fr; margin: 0 24px; gap: 24px; text-align: center; }
     .gift-visual { margin: 0 auto; }
@@ -932,6 +935,26 @@
         </ul>
         <p style="margin-top:16px;">Такое поведение может поставить под удар даже хорошего сотрудника — в кризис компания в первую очередь избавляется от невидимок. Просто из-за человеческого фактора</p>
       </div>
+    </div>
+  </div>
+  <div class="results-mobile">
+    <div class="results-mobile-col">
+      <div class="results-col-head boss"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg><span>Руководство</span></div>
+      <div class="result-card"><div class="num boss">01</div><p>Вас начнут воспринимать как <strong>опору</strong>, а не как исполнителя</p></div>
+      <div class="result-card"><div class="num boss">02</div><p>Научитесь говорить о проблемах так, чтобы вас <strong>благодарили</strong>, а не ругали</p></div>
+      <div class="result-card"><div class="num boss">03</div><p>Вас будут <strong>бояться потерять</strong>, даже если вы не «звезда»</p></div>
+    </div>
+    <div class="results-mobile-col">
+      <div class="results-col-head colleagues"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Коллеги</span></div>
+      <div class="result-card"><div class="num colleagues">01</div><p>Ваш <strong>авторитет возрастёт</strong>, роль в коллективе укрепится</p></div>
+      <div class="result-card"><div class="num colleagues">02</div><p>Научитесь формировать <strong>границы, за которые нельзя заходить</strong> — и делать это без агрессии</p></div>
+      <div class="result-card"><div class="num colleagues">03</div><p>Научитесь реагировать на <strong>манипуляции</strong> — когда крадут идею или перекладывают работу</p></div>
+    </div>
+    <div class="results-mobile-col">
+      <div class="results-col-head clients"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span>Клиенты</span></div>
+      <div class="result-card"><div class="num clients">01</div><p>Клиент будет <strong>возвращаться именно к вам</strong>, а не в компанию</p></div>
+      <div class="result-card"><div class="num clients">02</div><p>С <strong>первой встречи</strong> найдёте контакт с клиентом</p></div>
+      <div class="result-card"><div class="num clients">03</div><p>Узнаете, почему <strong>сверхсервис убивает</strong> вашу ценность и что делать вместо этого</p></div>
     </div>
   </div>
 </section>
