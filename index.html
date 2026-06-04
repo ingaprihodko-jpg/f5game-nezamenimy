@@ -914,8 +914,10 @@
     .hero-title .accent-line { font-size: 18px !important; line-height: 1.4 !important; }
     .hero-subtitle.accent-line { font-size: 18px !important; -webkit-text-fill-color: transparent; line-height: 1.4; margin-bottom: 16px; }
     .hero-visual { order: -1; }
-    .hero-photo-wrap { max-width: 75%; margin: 0 auto; }
-    .hero-photo-wrap video { border-radius: 12px; width: 100%; display: block; }
+    .hero-visual img { margin-bottom: 0 !important; width: 48% !important; }
+    .hero-visual > div { padding-right: 0 !important; }
+    /* marquee поднимаем обратно на мобиле */
+    #marquee-strip { margin-top: 0 !important; }
 
     /* VISIBILITY */
     .vis-points { grid-template-columns: 1fr; }
@@ -1023,7 +1025,7 @@
 </section>
 
 <!-- MARQUEE STRIP -->
-<div style="overflow:hidden; background:linear-gradient(90deg, #ED1E79, #732BC1); padding:12px 0; margin-top:-60px; position:relative; z-index:2;">
+<div id="marquee-strip" style="overflow:hidden; background:linear-gradient(90deg, #ED1E79, #732BC1); padding:12px 0; margin-top:-60px; position:relative; z-index:2;">
   <div class="hero-marquee-track">
     <span>Стратегии общения незаменимых</span>
     <span>Стратегии общения незаменимых</span>
