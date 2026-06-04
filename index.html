@@ -73,11 +73,21 @@
 
   /* ====== HERO ====== */
   .hero {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    overflow: visible;
-    gap: 60px;
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 60px !important;
+    align-items: center !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+  .hero-content {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  .hero-visual-wrap {
+    flex-shrink: 0 !important;
+    width: 320px !important;
+    overflow: visible !important;
   }
 
   .hero-top-badge {
@@ -1016,12 +1026,12 @@
       <a href="#buy" class="btn-cta">СТАТЬ НЕЗАМЕНИМЫМ</a>
       <p class="hero-author-tag" style="margin-top:20px;">Автор: <strong>Ольга Грищенко</strong> — основатель Фабрики бизнес-игр <a href="https://f5game.ru" style="color:var(--pink);">F5GAME.RU</a>, автор канала «Гений переговоров»</p>
     </div>
-    <div class="hero-visual">
+    <div class="hero-visual-wrap"><div class="hero-visual">
       <div style="display:flex; gap:0; align-items:flex-end; justify-content:center; padding-right:48px; overflow:visible;">
         <img src="hero_purple.svg" alt="" style="width:75%; height:auto; display:block; margin-bottom:-200px;">
         <img src="super_girl.svg" alt="" style="width:75%; height:auto; display:block; margin-bottom:-200px;">
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
