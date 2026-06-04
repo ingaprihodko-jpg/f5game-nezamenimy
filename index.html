@@ -79,6 +79,7 @@
     align-items: center !important;
     overflow: visible !important;
     width: 100% !important;
+    position: relative !important;
   }
   .hero-content {
     flex: 1 !important;
@@ -925,7 +926,7 @@
     .hero-title .accent-line { font-size: 18px !important; line-height: 1.4 !important; }
     .hero-subtitle.accent-line { font-size: 18px !important; -webkit-text-fill-color: transparent; line-height: 1.4; margin-bottom: 16px; }
     .hero { grid-template-columns: 1fr !important; display: grid; }
-    .hero-content { order: 1 !important; }
+    .hero-content { order: 1 !important; position: relative; z-index: 2; }
     .hero-visual { order: 2 !important; }
     .hero-visual img { margin-bottom: -70px !important; width: 48% !important; }
     .hero-visual > div { padding-right: 0 !important; }
