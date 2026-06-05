@@ -79,7 +79,6 @@
     align-items: center !important;
     overflow: visible !important;
     width: 100% !important;
-    position: relative !important;
   }
   .hero-content {
     flex: 1 !important;
@@ -87,7 +86,7 @@
   }
   .hero-visual-wrap {
     flex-shrink: 0 !important;
-    width: 500px !important; overflow: visible !important;
+    width: 480px !important; overflow: visible !important;
     overflow: visible !important;
   }
 
@@ -124,7 +123,7 @@
   .hero-title {
     font-family: 'Unbounded', sans-serif;
     font-weight: 900;
-    font-size: 48px;
+    font-size: 64px;
     line-height: 1.0;
     color: var(--black);
     text-transform: uppercase;
@@ -926,7 +925,7 @@
     .hero-title .accent-line { font-size: 18px !important; line-height: 1.4 !important; }
     .hero-subtitle.accent-line { font-size: 18px !important; -webkit-text-fill-color: transparent; line-height: 1.4; margin-bottom: 16px; }
     .hero { grid-template-columns: 1fr !important; display: grid; }
-    .hero-content { order: 1 !important; position: relative; z-index: 2; }
+    .hero-content { order: 1 !important; }
     .hero-visual { order: 2 !important; }
     .hero-visual img { margin-bottom: -70px !important; width: 48% !important; }
     .hero-visual > div { padding-right: 0 !important; }
@@ -1029,10 +1028,9 @@
       <p class="hero-author-tag" style="margin-top:20px;">Автор: <strong>Ольга Грищенко</strong> — основатель Фабрики бизнес-игр <a href="https://f5game.ru" style="color:var(--pink);">F5GAME.RU</a>, автор канала «Гений переговоров»</p>
     </div>
     <div class="hero-visual-wrap"><div class="hero-visual">
-      <div style="display:flex; gap:0; align-items:flex-end; justify-content:flex-end; overflow:visible; margin-left:auto; width:140%; margin-right:-80px;">
-        <video autoplay loop muted playsinline style="width:100%; height:auto; display:block; margin-bottom:-140px;">
-          <source src="https://ingaprihodko-jpg.github.io/f5game-nezamenimy/heroes.mp4" type="video/mp4">
-        </video>
+      <div style="display:flex; gap:0; align-items:flex-end; justify-content:center; padding-right:48px; overflow:visible;">
+        <img src="hero_purple.svg" alt="" style="width:85%; height:auto; display:block; margin-bottom:-140px;">
+        <img src="super_girl.svg" alt="" style="width:75%; height:auto; display:block; margin-bottom:-140px;">
       </div>
     </div></div>
   </div>
