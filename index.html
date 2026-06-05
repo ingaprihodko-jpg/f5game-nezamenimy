@@ -924,11 +924,12 @@
     .hero-title { font-size: 26px; }
     .hero-title .accent-line { font-size: 18px !important; line-height: 1.4 !important; }
     .hero-subtitle.accent-line { font-size: 18px !important; -webkit-text-fill-color: transparent; line-height: 1.4; margin-bottom: 16px; }
-    .hero { grid-template-columns: 1fr !important; display: grid; }
-    .hero-content { order: 1 !important; }
-    .hero-visual { order: 2 !important; }
+    .hero { flex-direction: column !important; gap: 0 !important; }
+    .hero-content { order: 1 !important; width: 100% !important; flex: none !important; min-width: 0 !important; padding-bottom: 16px; }
+    .hero-visual { order: 2 !important; width: 100% !important; flex: none !important; }
     .hero-visual img { margin-bottom: -70px !important; width: 48% !important; }
-    .hero-visual > div { padding-right: 0 !important; }
+    .hero-visual > div { padding-right: 0 !important; justify-content: center !important; }
+    .hero-visual-wrap { width: 100% !important; }
     #marquee-strip { margin-top: 0 !important; }
 
     /* VISIBILITY */
